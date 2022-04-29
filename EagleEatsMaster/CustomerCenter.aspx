@@ -3,12 +3,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Customer Center</h1>
-     <p>Please Enter your information below:</p>
-    <asp:Label ID="lblDriverFirst" runat="server" Text="First Name:"></asp:Label>
-    <br />
-    <asp:Label ID="lblDriverLast" runat="server" Text="Last Name:"></asp:Label>
-    <br />
-    <asp:Label ID="lblDriverDOB" runat="server" Text="Date of Birth: (xx/xx/xxx):"></asp:Label>
-    <br />
-    <asp:Label ID="lblDriverPhone" runat="server" Text="Cell Phone Number:"></asp:Label>
+     <p>Enter Account Information to Login:</p>
+
+    <action="CustomerProfile.aspx">
+        <label for="lblUserName">Username:</label><br>
+        <input type="text" id="userName" name="fname" value=" "><br>
+        <label for="passwd">Password:</label><br>
+        <input type="text" id="passwd" name="passwd" value=""><br>
+        <br>
+        <input type="submit" value="Submit">
+        
+
+    
 </asp:Content>
