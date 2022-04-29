@@ -16,7 +16,12 @@ namespace EagleEatsMaster
 
         protected void FormView1_ItemInserted(object sender, FormViewInsertedEventArgs e)
         {
-            
+            this.GridView1.DataBind();
+        }
+
+        protected void FormView1_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
+        {
+            this.GridView1.DataBind();
         }
     }
 }
