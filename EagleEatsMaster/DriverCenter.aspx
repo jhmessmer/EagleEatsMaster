@@ -12,8 +12,8 @@
         <br>
         <input type="submit" value="Submit">
        <br\ />
-       <p>Click the following link below to go to the Customer Center Login Page</p>
-       <a href = "CustomerCenter.aspx">Customer Center</a>
+       <p>If you do not have an account, click the link below to create one!</p>
+       <a href = "DriverSignUp.aspx">Driver Sign Up!</a>
 
 
 </asp:Content>

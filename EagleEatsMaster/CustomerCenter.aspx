@@ -13,7 +13,7 @@
         <br>
         <input type="submit" value="Submit">
         <br />
-        <p>Click the following link below to go to the Driver Center Login Page</p>
-       <a href = "DriverCenter.aspx">Driver Center</a>
+        <p>If you do not have an account, click the link below to create one!</p>
+       <a href = "CustomerSignUp.aspx">Customer Sign Up!</a>
     
 </asp:Content>

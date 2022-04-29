@@ -85,8 +85,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CustomerProfile.aspx" />
+    <Content Include="CustomerSignUp.aspx" />
     <Content Include="DriverCenter.aspx" />
     <Content Include="DriverProfile.aspx" />
+    <Content Include="DriverSignUp.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="MyDelivery.aspx" />
     <Content Include="MyOrder.aspx" />
@@ -122,6 +124,13 @@
     <Compile Include="CustomerProfile.aspx.designer.cs">
       <DependentUpon>CustomerProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerSignUp.aspx.cs">
+      <DependentUpon>CustomerSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerSignUp.aspx.designer.cs">
+      <DependentUpon>CustomerSignUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DriverCenter.aspx.cs">
       <DependentUpon>DriverCenter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,6 +144,13 @@
     </Compile>
     <Compile Include="DriverProfile.aspx.designer.cs">
       <DependentUpon>DriverProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DriverSignUp.aspx.cs">
+      <DependentUpon>DriverSignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverSignUp.aspx.designer.cs">
+      <DependentUpon>DriverSignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="EagleEats.Master.cs">
       <DependentUpon>EagleEats.Master</DependentUpon>
