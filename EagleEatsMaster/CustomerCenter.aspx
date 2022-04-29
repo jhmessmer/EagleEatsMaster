@@ -12,7 +12,8 @@
         <input type="text" id="passwd" name="passwd" value=""><br>
         <br>
         <input type="submit" value="Submit">
-        
-
+        <br />
+        <p>Click the following link below to go to the Driver Center Login Page</p>
+       <a href = "DriverCenter.aspx">Driver Center</a>
     
 </asp:Content>
