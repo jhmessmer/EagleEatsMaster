@@ -84,10 +84,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-<<<<<<< HEAD
-=======
     <Content Include="SignUp.aspx" />
->>>>>>> 3ca32a11730000b8d651487b1be8c4906255bed0
     <Content Include="Home.aspx" />
     <Content Include="MyDelivery.aspx" />
     <Content Include="Route.aspx" />
@@ -114,8 +111,6 @@
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,7 +118,6 @@
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
->>>>>>> 3ca32a11730000b8d651487b1be8c4906255bed0
     <Compile Include="EagleEats.Master.cs">
       <DependentUpon>EagleEats.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
