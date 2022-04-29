@@ -22,8 +22,9 @@
             </div>
             <ul class="nav navbar-nav">
             <li class="active"><a href="Home.aspx">Home</a></li>
-            <li><a href="CustomerCenter.aspx">Customer Center</a></li>
-            <li><a href="DriverCenter.aspx">Driver Center</a></li>
+            <li><a href="MyDelivery.aspx">MyDelivery</a></li>
+            <li><a href="Route.aspx">MyRoute</a></li>
+            <li><a href="User.aspx">MyUser</a></li>
             <li><a href="AboutUs.aspx">About Us</a></li>
             </ul>
             </div>

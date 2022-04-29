@@ -84,14 +84,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="CustomerProfile.aspx" />
-    <Content Include="CustomerSignUp.aspx" />
-    <Content Include="DriverCenter.aspx" />
-    <Content Include="DriverProfile.aspx" />
-    <Content Include="DriverSignUp.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="MyDelivery.aspx" />
-    <Content Include="MyOrder.aspx" />
     <Content Include="Route.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -116,40 +111,12 @@
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerProfile.aspx.cs">
-      <DependentUpon>CustomerProfile.aspx</DependentUpon>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerProfile.aspx.designer.cs">
-      <DependentUpon>CustomerProfile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerSignUp.aspx.cs">
-      <DependentUpon>CustomerSignUp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CustomerSignUp.aspx.designer.cs">
-      <DependentUpon>CustomerSignUp.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DriverCenter.aspx.cs">
-      <DependentUpon>DriverCenter.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DriverCenter.aspx.designer.cs">
-      <DependentUpon>DriverCenter.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DriverProfile.aspx.cs">
-      <DependentUpon>DriverProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DriverProfile.aspx.designer.cs">
-      <DependentUpon>DriverProfile.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DriverSignUp.aspx.cs">
-      <DependentUpon>DriverSignUp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DriverSignUp.aspx.designer.cs">
-      <DependentUpon>DriverSignUp.aspx</DependentUpon>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="EagleEats.Master.cs">
       <DependentUpon>EagleEats.Master</DependentUpon>
@@ -171,13 +138,6 @@
     </Compile>
     <Compile Include="MyDelivery.aspx.designer.cs">
       <DependentUpon>MyDelivery.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MyOrder.aspx.cs">
-      <DependentUpon>MyOrder.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MyOrder.aspx.designer.cs">
-      <DependentUpon>MyOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Route.aspx.cs">
