@@ -104,7 +104,6 @@
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
-    <Content Include="CustomerCenter.aspx" />
     <Content Include="style.css" />
     <Content Include="User.aspx" />
     <Content Include="Web.config" />
@@ -187,13 +186,6 @@
     </Compile>
     <Compile Include="Route.aspx.designer.cs">
       <DependentUpon>Route.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerCenter.aspx.cs">
-      <DependentUpon>CustomerCenter.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CustomerCenter.aspx.designer.cs">
-      <DependentUpon>CustomerCenter.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>
