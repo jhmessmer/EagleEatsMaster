@@ -4,15 +4,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Welcome to the USI Eagle Eats Delivery Service</h1>
     <p>Please Enter your information below:</p>
+    <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
+    <asp:TextBox ID="tbUser" runat="server"></asp:TextBox>
    <action="CustomerProfile.aspx">
-        <label for="lblUserName">Username:</label><br>
-        <input type="text" id="userName" name="fname" value=" "><br>
-        <label for="passwd">Password:</label><br>
-        <input type="text" id="passwd" name="passwd" value=""><br>
+        <br />
+    <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
+    <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
+   <action="CustomerProfile.aspx">
         <br>
-        <input type="submit" value="Login">
-       <br\ />
-       <p>If you do not have an account, click the link below to create one!</p>
+        <br>
+        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+&nbsp;<br\ /><p>If you do not have an account, click the link below to create one!</p>
        <a href = "SignUp.aspx">Sign Up!</a>
 
 
