@@ -1,8 +1,9 @@
 ﻿body {
-    background-color: aqua;
+    background-color: slategray;
 
 }
 h1{
-    color: forestgreen;
+    color: black;
+    font-family: Arial;
     align-content: center;
 }
