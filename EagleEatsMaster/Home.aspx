@@ -13,7 +13,7 @@
         <input type="submit" value="Login">
        <br\ />
        <p>If you do not have an account, click the link below to create one!</p>
-       <a href = "DriverSignUp.aspx">Driver Sign Up!</a>
+       <a href = "SignUp.aspx">Sign Up!</a>
 
 
 <p>&nbsp;</p>
