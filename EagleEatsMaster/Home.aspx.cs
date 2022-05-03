@@ -18,26 +18,73 @@ namespace EagleEatsMaster
 
         }
 
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataReader reader;
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string Username = tbUser.Text;
-            string Password = tbPassword.Text;
-            int loggedIntUser ID;
+            /*
+            string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
+            //con = new SqlConnection("constring");
 
-            string constring = ConfigurationManager.ConnectionString["EagleEastConnectionString"].ConnectionString;
-            string query = "SELECT [Id], [Username], [Password] FROM [User] WHERE (([Username] = @Username) AND ([Password] = @Password));
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
-            { 
-                System.Diagnostics.Process.Start("");
+            string user = tbUser.Text;
+            string password = tbPassword.Text;
+            cmd = new SqlCommand();
+            //con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT * FROM tblUser where usr='" + tbUser.Text + "' AND pwd='" + tbPassword.Text + "'";
+            reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                Response.Redirect("MyDelivery.aspx");
             }
             else
             {
                 MessageBox.Show("Invalid Login please check username and password");
             }
+            */
+
+            
+            string Username = tbUser.Text;
+            string Password = tbPassword.Text;
+            int UserId;
+
+            string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
+            string query = "SELECT [Id], [Username], [Password] FROM [User] WHERE (([Username] = @Username) AND ([Password] = @Password))";
+            
+            using (var con = new SqlConnection(constring))
+            {
+                var command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@Username", Username);
+                command.Parameters.AddWithValue("Password", Password);
+
+                try
+                {
+                    con.Open();
+                    using (var reader = command.ExecuteReader(CommandBehavior.CloseConnection))
+                    {
+                        if (reader.Read())
+                        {
+                            Session["UserId"] = Convert.ToInt32(reader["Id"]);
+                            Session["Password"] = Password;
+                            Response.Redirect("MyDelivery.aspx");
+                        }
+                        /*
+                        else
+                        {
+                            MessageBox.Show("Invalid Username: check information or sign up");
+                        }
+                        */
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid Username: please re-check information or sign up");
+                }
+            }
+            
         }
+
     }
 }
     
