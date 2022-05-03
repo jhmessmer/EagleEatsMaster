@@ -79,7 +79,7 @@ namespace EagleEatsMaster
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Invalid Username: please re-check information or sign up");
+                    MessageBox.Show("Invalid Username: Please re-check information or Sign Up.");
                 }
             }
             
