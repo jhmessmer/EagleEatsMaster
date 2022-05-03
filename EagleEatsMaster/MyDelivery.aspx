@@ -4,8 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>My Delivery</h1>
     <p>
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1">
         </asp:GridView>
+    
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     
     <p>&nbsp;</p>
     <asp:FormView ID="FormView1" runat="server"></asp:FormView>
