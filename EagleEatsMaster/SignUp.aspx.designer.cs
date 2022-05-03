@@ -24,13 +24,13 @@ namespace EagleEatsMaster
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// tbFname control.
+        /// tbUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFname;
+        protected global::System.Web.UI.WebControls.TextBox tbUser;
 
         /// <summary>
         /// Label2 control.
@@ -42,13 +42,13 @@ namespace EagleEatsMaster
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// tbLname control.
+        /// tbPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbLname;
+        protected global::System.Web.UI.WebControls.TextBox tbPassword;
 
         /// <summary>
         /// Label3 control.
@@ -60,13 +60,13 @@ namespace EagleEatsMaster
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// tbFname0 control.
+        /// tbConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFname0;
+        protected global::System.Web.UI.WebControls.TextBox tbConfirm;
 
         /// <summary>
         /// Label4 control.
@@ -78,30 +78,30 @@ namespace EagleEatsMaster
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// tbFname1 control.
+        /// tbAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFname1;
+        protected global::System.Web.UI.WebControls.TextBox tbAddress;
 
         /// <summary>
-        /// Label5 control.
+        /// btnSignUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Button btnSignUp;
 
         /// <summary>
-        /// tbFname2 control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFname2;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

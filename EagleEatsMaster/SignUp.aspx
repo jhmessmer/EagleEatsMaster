@@ -4,19 +4,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Customer Sign Up</h1>
     <h2>Please enter the following information to register for EagleEats deliveries!</h2>
-    <asp:Label ID="Label1" runat="server" Text="First Name: "></asp:Label>
-    <asp:TextBox ID="tbFname" runat="server"></asp:TextBox>
+    <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
+    <asp:TextBox ID="tbUser" runat="server"></asp:TextBox>
     <br />
+    <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
+    <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
     <br />
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname"><br>
-    <label for="passwd">Password:</label><br>
-    <input type="text" id="passwd" name="address"><br>
-    <label for="address">Address:</label><br>
-    <input type="text" id="address" name="address"><br>
+    <asp:Label ID="Label3" runat="server" Text="Confirm Password: "></asp:Label>
+    <asp:TextBox ID="tbConfirm" runat="server"></asp:TextBox>
     <br />
+    <asp:Label ID="Label4" runat="server" Text="Address: "></asp:Label>
+    <asp:TextBox ID="tbAddress" runat="server"></asp:TextBox>
+    <br>
     <br />
-    <input type="submit" value="Submit">
-</asp:Content>
+    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" />
+    <asp:Button ID="btnCancel" runat="server" PostBackUrl="~/Home.aspx" Text="Cancel" />
+    <br />
+    &nbsp;</asp:Content>

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace EagleEatsMaster
 {
@@ -20,7 +23,12 @@ namespace EagleEatsMaster
         SqlDataReader reader;
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            if (txtconfirmpassword.Text != string.Empty || txtpassword.Text != string.Empty || txtusername.Text != string.Empty)
+            string Username = tbUser.Text;
+            string Password = tbPassword.Text;
+
+
+
+            if (tbPassword.Text != string.Empty || txtusername.Text != string.Empty)
             {
                 if (txtpassword.Text == txtconfirmpassword.Text)
                 {
