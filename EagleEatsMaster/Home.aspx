@@ -13,7 +13,7 @@
         <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
         <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
         <br>
-       <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+       <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click1" />
        <br\ />
        </p>
        <p>If you do not have an account, click the link below to create one!</p>

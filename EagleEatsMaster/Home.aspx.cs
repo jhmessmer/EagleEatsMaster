@@ -18,28 +18,28 @@ namespace EagleEatsMaster
 
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin_Click1(object sender, EventArgs e)
         {
             /*
-            string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
-            //con = new SqlConnection("constring");
+           string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
+           //con = new SqlConnection("constring");
 
-            string user = tbUser.Text;
-            string password = tbPassword.Text;
-            cmd = new SqlCommand();
-            //con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM tblUser where usr='" + tbUser.Text + "' AND pwd='" + tbPassword.Text + "'";
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                Response.Redirect("MyDelivery.aspx");
-            }
-            else
-            {
-                MessageBox.Show("Invalid Login please check username and password");
-            }
-            */
+           string user = tbUser.Text;
+           string password = tbPassword.Text;
+           cmd = new SqlCommand();
+           //con.Open();
+           cmd.Connection = con;
+           cmd.CommandText = "SELECT * FROM tblUser where usr='" + tbUser.Text + "' AND pwd='" + tbPassword.Text + "'";
+           reader = cmd.ExecuteReader();
+           if (reader.Read())
+           {
+               Response.Redirect("MyDelivery.aspx");
+           }
+           else
+           {
+               MessageBox.Show("Invalid Login please check username and password");
+           }
+           */
 
 
             string Username = tbUser.Text;
