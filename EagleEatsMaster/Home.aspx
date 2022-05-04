@@ -4,7 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Welcome to the USI Eagle Eats Delivery Service</h1>
     <p>Please Enter your information below:</p>
-   <action="CustomerProfile.aspx">
+   <action="Home.aspx">
+       <p>
         <label for="lblUserName">Username:</label><br>
         <input type="text" id="userName" name="fname" value=" "><br>
         <label for="passwd">Password:</label><br>
@@ -12,8 +13,9 @@
         <br>
         <input type="submit" value="Login">
        <br\ />
+       </p>
        <p>If you do not have an account, click the link below to create one!</p>
-       <a href = "SignUp.aspx">Sign Up!</a>
+       <p><a href = "SignUp.aspx">Sign Up!</a></p>
 
 
 <p>&nbsp;</p>
