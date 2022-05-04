@@ -14,12 +14,7 @@ namespace EagleEatsMaster
 
         }
 
-        protected void btnSubmitDelivery_Click(object sender, EventArgs e)
-        {
-            
-
-            
-        }
+       
 
         protected void FormView1_ItemDeleted(object sender, FormViewDeletedEventArgs e)
         {

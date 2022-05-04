@@ -33,13 +33,13 @@ namespace EagleEatsMaster
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// btnCompleteDelivery control.
+        /// btnComplete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCompleteDelivery;
+        protected global::System.Web.UI.WebControls.Button btnComplete;
 
         /// <summary>
         /// FormView1 control.

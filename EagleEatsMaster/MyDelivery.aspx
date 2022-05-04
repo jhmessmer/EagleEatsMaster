@@ -22,11 +22,9 @@
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" SelectCommand="SELECT * FROM [Delivery]"></asp:SqlDataSource>
     </p>
-<p>
-        <asp:Button ID="btnCompleteDelivery" runat="server" Text="Complete Delivery" Width="298px" OnClick="btnSubmitDelivery_Click" />
-    </p>
-    
-    
+        <p>
+            <asp:Button ID="btnComplete" runat="server" Text="Complete Delivery" />
+        </p>
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="Delivery_Id" DataSourceID="SqlDataSource2" OnItemCreated="FormView1_ItemCreated" OnItemDeleted="FormView1_ItemDeleted" OnItemInserted="FormView1_ItemInserted">
         <EditItemTemplate>
             Delivery_Id:
