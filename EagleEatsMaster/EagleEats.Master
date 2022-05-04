@@ -26,6 +26,7 @@
                         <li><a href="Route.aspx">MyRoute</a></li>
                         <li><a href="User.aspx">MyUser</a></li>
                         <li><a href="AboutUs.aspx">About Us</a></li>
+                        <li><a href="Home.aspx">Log Out</a></li>
                     </ul>
                 </div>
             </nav>
