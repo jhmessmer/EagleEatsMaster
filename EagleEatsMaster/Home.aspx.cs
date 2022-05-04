@@ -56,7 +56,7 @@ namespace EagleEatsMaster
             {
                 var command = new SqlCommand(query, con);
                 command.Parameters.AddWithValue("@Username", Username);
-                command.Parameters.AddWithValue("Password", Password);
+                command.Parameters.AddWithValue("@Password", Password);
 
                 try
                 {

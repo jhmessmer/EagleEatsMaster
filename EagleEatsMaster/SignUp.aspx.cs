@@ -13,9 +13,10 @@ namespace EagleEatsMaster
 {
     public partial class SignUp : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         SqlConnection con;
@@ -25,39 +26,78 @@ namespace EagleEatsMaster
         {
             string Username = tbUser.Text;
             string Password = tbPassword.Text;
+            string Confirm = tbConfirm.Text;
+            string Address = tbAddress.Text;
 
+            string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
+            string query = "INSERT into [User] values(@Username,@Password,@Address)";
 
-
-            if (tbPassword.Text != string.Empty || txtusername.Text != string.Empty)
+            /*
+            using (var con = new SqlConnection(constring));
             {
-                if (txtpassword.Text == txtconfirmpassword.Text)
+                var command = new SqlCommand(query, con);
+                command.Parameters.AddWithValue("@Username", Username);
+                command.Parameters.AddWithValue("@Password", Password);
+                command.Parameters.AddWithValue("@Address", Address);
+
+                try
                 {
-                    cmd = new SqlCommand("select * from LoginTable where username='" + txtusername.Text + "'", cn);
-                    dr = cmd.ExecuteReader();
-                    if (dr.Read())
+                    con.Open();
+                    using (var reader = command.ExecuteReader(CommandBehavior.CloseConnection))
                     {
-                        dr.Close();
-                        MessageBox.Show("Username Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if(reader.Read())
+                        {
+                            Session["UserId"] = Convert.ToInt32(reader["Id"]);
+                            Session["Password"] = Password;
+                            Response.Redirect("Home.aspx");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+            */
+
+            
+            using (var con = new SqlConnection(constring))
+            {                
+
+                var command = new SqlCommand(query, con);
+                if (Confirm != string.Empty || Password != string.Empty || Username != string.Empty || Address != string.Empty)
+                {
+                    if (Password == Confirm)
+                    {
+                        cmd = new SqlCommand("SELECT * from [User] WHERE Username='" + Username + "'", con);
+                        var reader = command.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            con.Close();
+                            MessageBox.Show("Username already exists, please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            con.Close();
+                            //cmd = new SqlCommand("INSERT into [User] values(@Username,@Password,@Address)", con);
+                            command.Parameters.AddWithValue("@Username", Username);
+                            command.Parameters.AddWithValue("@Password", Password);
+                            command.Parameters.AddWithValue("@Address", Address);
+                            command.ExecuteNonQuery();
+                            MessageBox.Show("Account successfully created. Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Response.Redirect("Home.aspx");
+                        }
                     }
                     else
                     {
-                        dr.Close();
-                        cmd = new SqlCommand("insert into LoginTable values(@username,@password)", cn);
-                        cmd.Parameters.AddWithValue("username", txtusername.Text);
-                        cmd.Parameters.AddWithValue("password", txtpassword.Text);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Please ensure passwords match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter both password same ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please fill all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           }
         }
-    }
+        }
 }
