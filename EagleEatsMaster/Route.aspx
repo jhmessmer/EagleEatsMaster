@@ -5,6 +5,7 @@
     <h1>My Route</h1>
     <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="Route_Id">
         <Columns>
+            <asp:CommandField ShowSelectButton="True" />
             <asp:BoundField DataField="Route_Id" HeaderText="Route_Id" InsertVisible="False" ReadOnly="True" SortExpression="Route_Id" />
             <asp:BoundField DataField="Sender_Id" HeaderText="Sender_Id" SortExpression="Sender_Id" />
             <asp:BoundField DataField="Receiver_Id" HeaderText="Receiver_Id" SortExpression="Receiver_Id" />
