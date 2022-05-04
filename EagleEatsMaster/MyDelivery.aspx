@@ -20,7 +20,6 @@
                 <asp:BoundField DataField="ETA" HeaderText="ETA" SortExpression="ETA" />
             </Columns>
         </asp:GridView>
-    
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" SelectCommand="SELECT * FROM [Delivery]"></asp:SqlDataSource>
     </p>
 <p>
