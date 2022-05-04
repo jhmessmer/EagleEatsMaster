@@ -174,3 +174,4 @@ C:\Users\jhmes\source\repos\EagleEatsMaster\EagleEatsMaster\obj\Debug\EagleEatsM
 C:\Users\jhmes\source\repos\EagleEatsMaster\EagleEatsMaster\obj\Debug\EagleEatsMaster.csproj.CopyComplete
 C:\Users\jhmes\source\repos\EagleEatsMaster\EagleEatsMaster\obj\Debug\EagleEatsMaster.dll
 C:\Users\jhmes\source\repos\EagleEatsMaster\EagleEatsMaster\obj\Debug\EagleEatsMaster.pdb
+C:\Users\jhmes\source\repos\EagleEatsMaster\EagleEatsMaster\obj\Debug\EagleEatsMaster.csprojAssemblyReference.cache
