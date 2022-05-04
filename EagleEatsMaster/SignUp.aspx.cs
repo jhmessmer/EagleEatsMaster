@@ -16,7 +16,8 @@ namespace EagleEatsMaster
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+           //cn = new SqlConnection(@ **)
+           //cn.Open();
         }
 
         SqlConnection con;

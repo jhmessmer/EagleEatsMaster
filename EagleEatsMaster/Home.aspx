@@ -9,12 +9,15 @@
    <action="CustomerProfile.aspx">
         <br />
     <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
-    <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
+    <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
    <action="CustomerProfile.aspx">
         <br>
         <br>
         <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
-&nbsp;<br\ /><p>If you do not have an account, click the link below to create one!</p>
+&nbsp;<br />
+    <br\ />
+    <br />
+    <p>If you do not have an account, click the link below to create one!</p>
        <a href = "SignUp.aspx">Sign Up!</a>
 
 

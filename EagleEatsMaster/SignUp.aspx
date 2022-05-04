@@ -17,10 +17,10 @@
     <asp:TextBox ID="tbUser" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
-    <asp:TextBox ID="tbPassword" runat="server"></asp:TextBox>
+    <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
     <br />
     <asp:Label ID="Label3" runat="server" Text="Confirm Password: "></asp:Label>
-    <asp:TextBox ID="tbConfirm" runat="server"></asp:TextBox>
+    <asp:TextBox ID="tbConfirm" runat="server" TextMode="Password"></asp:TextBox>
     <br />
     <asp:Label ID="Label4" runat="server" Text="Address: "></asp:Label>
     <asp:TextBox ID="tbAddress" runat="server"></asp:TextBox>
