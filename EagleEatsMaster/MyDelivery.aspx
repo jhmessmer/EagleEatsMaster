@@ -23,7 +23,7 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" SelectCommand="SELECT * FROM [Delivery]"></asp:SqlDataSource>
     </p>
 <p>
-        <asp:Button ID="btnSubmitDelivery" runat="server" Text="Submit Delivery" Width="298px" OnClick="btnSubmitDelivery_Click" />
+        <asp:Button ID="btnCompleteDelivery" runat="server" Text="Complete Delivery" Width="298px" OnClick="btnSubmitDelivery_Click" />
     </p>
     
     
@@ -163,5 +163,9 @@
     <h2>Review Deliveries</h2>
 <p>
     <asp:TextBox ID="txtReviewDelivery" runat="server" Height="128px" Width="342px"></asp:TextBox>
+     <b></b>
 </p>
+    <p>
+        <asp:Button ID="btnReview" runat="server" Text="Submit Review" />
+    </p>
 </asp:Content>
