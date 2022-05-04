@@ -1,9 +1,18 @@
 ﻿body {
-    background-color: slategray;
+    background-color: ghostwhite;
 
 }
 h1{
     color: black;
     font-family: Arial;
-    align-content: center;
+    text-align: center;
+}
+h2 {
+    color: black;
+    font-family: Arial;
+    text-align: center;
+}
+p{
+    font-family: Arial;
+    text-align: center;
 }

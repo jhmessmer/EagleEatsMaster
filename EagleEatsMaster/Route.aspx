@@ -21,6 +21,8 @@
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" SelectCommand="SELECT * FROM [Route]"></asp:SqlDataSource>
     <br />
+    <asp:Button ID="btnRouteConfirmation" runat="server" Text="Confirm Your Route" Width="409px" />
+    <br />
     <br />
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="Route_Id" DataSourceID="SqlDataSource2" OnItemInserted="FormView1_ItemInserted" OnItemUpdated="FormView1_ItemUpdated">
         <EditItemTemplate>

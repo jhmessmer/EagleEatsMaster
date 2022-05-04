@@ -13,5 +13,29 @@ namespace EagleEatsMaster
         {
 
         }
+
+        protected void btnSubmitDelivery_Click(object sender, EventArgs e)
+        {
+            
+
+            
+        }
+
+        protected void FormView1_ItemDeleted(object sender, FormViewDeletedEventArgs e)
+        {
+            this.GridView1.DataBind();
+        }
+
+        protected void FormView1_ItemCreated(object sender, EventArgs e)
+        {
+            this.GridView1.DataBind();
+        }
+
+        protected void FormView1_ItemInserted(object sender, FormViewInsertedEventArgs e)
+        {
+            this.GridView1.DataBind();
+        }
+    
     }
+    
 }
