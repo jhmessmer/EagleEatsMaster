@@ -6,12 +6,14 @@
     <p>Please Enter your information below:</p>
    <action="Home.aspx">
        <p>
-        <label for="lblUserName">Username:</label><br>
-        <input type="text" id="userName" name="fname" value=" "><br>
-        <label for="passwd">Password:</label><br>
-        <input type="text" id="passwd" name="passwd" value=""><br>
+        <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
+        <asp:TextBox ID="tbUser" runat="server"></asp:TextBox>
+       </p>
+    <p>
+        <asp:Label ID="Label2" runat="server" Text="Password: "></asp:Label>
+        <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
         <br>
-        <input type="submit" value="Login">
+       <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
        <br\ />
        </p>
        <p>If you do not have an account, click the link below to create one!</p>
