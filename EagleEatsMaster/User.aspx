@@ -16,7 +16,7 @@
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" SelectCommand="SELECT * FROM [User]"></asp:SqlDataSource>
     <br />
     <br />
-    <asp:FormView ID="FormView1" runat="server" OnItemInserted="FormView1_ItemInserted" DataKeyNames="User_Id" DataSourceID="SqlDataSource2" OnItemUpdated="FormView1_ItemUpdated">
+    <asp:FormView ID="FormView1" runat="server" OnItemInserted="FormView1_ItemInserted" DataKeyNames="User_Id" DataSourceID="SqlDataSource2" OnItemUpdated="FormView1_ItemUpdated" OnItemDeleted="FormView1_ItemDeleted">
         <EditItemTemplate>
             User_Id:
             <asp:Label ID="User_IdLabel1" runat="server" Text='<%# Eval("User_Id") %>' />
@@ -64,7 +64,7 @@
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" DeleteCommand="DELETE FROM [User] WHERE (User_Id = @User_Id)" InsertCommand="INSERT INTO [User] (UserName, Passwd, Address) VALUES (@UserName, @Passwd, @Address)" SelectCommand="SELECT [User].* FROM [User]" UpdateCommand="UPDATE [User] SET UserName = @UserName, Passwd = @Passwd, Address = @Address WHERE (User_Id = @User_Id)">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" DeleteCommand="DELETE FROM [User] WHERE (User_Id = @User_Id)" InsertCommand="INSERT INTO [User] (UserName, Passwd, Address) VALUES (@UserName, @Passwd, @Address)" SelectCommand="SELECT User_Id, UserName, Passwd, Address FROM [User] WHERE (User_Id = @User_Id)" UpdateCommand="UPDATE [User] SET UserName = @UserName, Passwd = @Passwd, Address = @Address WHERE (User_Id = @User_Id)">
         <DeleteParameters>
             <asp:Parameter Name="User_Id" />
         </DeleteParameters>
@@ -73,6 +73,9 @@
             <asp:Parameter Name="Passwd" />
             <asp:Parameter Name="Address" />
         </InsertParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="GridView1" DefaultValue="1" Name="User_Id" PropertyName="SelectedValue" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="UserName" />
             <asp:Parameter Name="Passwd" />

@@ -23,5 +23,10 @@ namespace EagleEatsMaster
         {
             this.GridView1.DataBind();
         }
+
+        protected void FormView1_ItemDeleted(object sender, FormViewDeletedEventArgs e)
+        {
+            this.GridView1.DataBind();
+        }
     }
 }
