@@ -10,10 +10,12 @@
     <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
-    <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="lblAddress" runat="server" Text="Address:"></asp:Label>
     <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
+    </p>
+    <p>
     <br />
     <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" OnClick="btnSignUp_Click" />
     </p>
