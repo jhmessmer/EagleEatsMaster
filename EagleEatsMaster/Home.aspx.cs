@@ -20,64 +20,27 @@ namespace EagleEatsMaster
 
         protected void btnLogin_Click1(object sender, EventArgs e)
         {
-            /*
-           string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
-           //con = new SqlConnection("constring");
-
-           string user = tbUser.Text;
-           string password = tbPassword.Text;
-           cmd = new SqlCommand();
-           //con.Open();
-           cmd.Connection = con;
-           cmd.CommandText = "SELECT * FROM tblUser where usr='" + tbUser.Text + "' AND pwd='" + tbPassword.Text + "'";
-           reader = cmd.ExecuteReader();
-           if (reader.Read())
-           {
-               Response.Redirect("MyDelivery.aspx");
-           }
-           else
-           {
-               MessageBox.Show("Invalid Login please check username and password");
-           }
-           */
-
-
-            string Username = tbUser.Text;
-            string Password = tbPassword.Text;
-            int UserId;
-
-            string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
-            string query = "SELECT [Id], [Username], [Password] FROM [User] WHERE (([Username] = @Username) AND ([Password] = @Password))";
-
-            using (var con = new SqlConnection(constring))
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EagleEatsDB;Integrated Security=False");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select * from [User] where UserName=@UserName and Passwd=@Passwd", con);
+            cmd.Parameters.AddWithValue("@UserName", tbUser.Text.ToString());
+            cmd.Parameters.AddWithValue("@Passwd", tbPassword.Text.ToString());
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
             {
-                var command = new SqlCommand(query, con);
-                command.Parameters.AddWithValue("@Username", Username);
-                command.Parameters.AddWithValue("@Password", Password);
-
-                try
-                {
-                    con.Open();
-                    using (var reader = command.ExecuteReader(CommandBehavior.CloseConnection))
-                    {
-                        if (reader.Read())
-                        {
-                            Session["UserId"] = Convert.ToInt32(reader["Id"]);
-                            Session["Password"] = Password;
-                            Response.Redirect("MyDelivery.aspx");
-                        }
-                        /*
-                        else
-                        {
-                            MessageBox.Show("Invalid Username: check information or sign up");
-                        }
-                        */
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Invalid Username: Please re-check information or Sign Up.");
-                }
+                Session["User_Id"] = Convert.ToInt32(reader["User_Id"].ToString());
+                Session["UserName"] = reader["UserName"].ToString();
+                reader.Close();
+                cmd.Dispose();
+                con.Close();
+                Response.Redirect("MyDelivery.aspx");
+            }
+            else
+            {
+                reader.Close();
+                cmd.Dispose();
+                con.Close();
+                MessageBox.Show("Invalid credentials");
             }
         }
     }
