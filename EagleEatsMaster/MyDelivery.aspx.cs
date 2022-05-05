@@ -13,9 +13,6 @@ namespace EagleEatsMaster
         {
 
         }
-
-       
-
         protected void FormView1_ItemDeleted(object sender, FormViewDeletedEventArgs e)
         {
             this.GridView1.DataBind();
@@ -30,7 +27,19 @@ namespace EagleEatsMaster
         {
             this.GridView1.DataBind();
         }
-    
+
+        protected void btnComplete_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+        protected void btnReview_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
     }
     
 }
