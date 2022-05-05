@@ -13,6 +13,21 @@
         <div>
     <h1>Customer Sign Up</h1>
     <h2>Please enter the following information to register for EagleEats deliveries!</h2>
+            <p>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" InsertCommand="INSERT INTO [User] (UserName, Passwd, Address) VALUES (@UserName, @Passwd, @Address)" SelectCommand="SELECT * FROM [User]" UpdateCommand="UPDATE [User] SET UserName = @UserName, Passwd = @Passwd, Address= @Address WHERE (User_Id = @User_Id)">
+                    <InsertParameters>
+                        <asp:Parameter Name="UserName" />
+                        <asp:Parameter Name="Passwd" />
+                        <asp:Parameter Name="Address" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="UserName" />
+                        <asp:Parameter Name="Passwd" />
+                        <asp:Parameter Name="Address" />
+                        <asp:Parameter Name="User_Id" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+            </p>
     <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
     <asp:TextBox ID="tbUser" runat="server"></asp:TextBox>
     <br />

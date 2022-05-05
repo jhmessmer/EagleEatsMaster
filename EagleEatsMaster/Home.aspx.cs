@@ -23,34 +23,39 @@ namespace EagleEatsMaster
         SqlDataReader reader;
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            /*
-            string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
-            //con = new SqlConnection("constring");
-
-            string user = tbUser.Text;
-            string password = tbPassword.Text;
-            cmd = new SqlCommand();
-            //con.Open();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM tblUser where usr='" + tbUser.Text + "' AND pwd='" + tbPassword.Text + "'";
-            reader = cmd.ExecuteReader();
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EagleEatsDB;Integrated Security=False");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select * from [User] where UserName=@UserName and Passwd=@Passwd", con);
+            cmd.Parameters.AddWithValue("@UserName", tbUser.Text.ToString());
+            cmd.Parameters.AddWithValue("@Passwd", tbPassword.Text.ToString());
+            SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
+                Session["User_Id"] = Convert.ToInt32(reader["User_Id"].ToString());
+                Session["UserName"] = reader["UserName"].ToString();
+                reader.Close();
+                cmd.Dispose();
+                con.Close();
                 Response.Redirect("MyDelivery.aspx");
             }
             else
             {
-                MessageBox.Show("Invalid Login please check username and password");
+                reader.Close();
+                cmd.Dispose();
+                con.Close();
+                MessageBox.Show("Invalid credentials");
             }
-            */
+        }
+    }
 
-            
+            /*
             string Username = tbUser.Text;
             string Password = tbPassword.Text;
-            int UserId;
+            int loggedinUserId;
 
+            //SqlConnection conn = 
             string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
-            string query = "SELECT [Id], [UserName], [Passwd] FROM [User] WHERE (([UserName] = @UserName) AND ([Passwd] = @Passwd))";
+            string query = "SELECT [User_Id], [UserName], [Passwd] FROM [User] WHERE (([UserName] = @UserName) AND ([Passwd] = @Passwd))";
             
             using (var con = new SqlConnection(constring))
             {
@@ -63,28 +68,28 @@ namespace EagleEatsMaster
                     con.Open();
                     using (var reader = command.ExecuteReader(CommandBehavior.CloseConnection))
                     {
-                        if (reader.Read())
+                        if (reader.HasRows)
                         {
-                            Session["User_Id"] = Convert.ToInt32(reader["Id"]);
-                            Session["Passwd"] = Password;
-                            Response.Redirect("MyDelivery.aspx");
+                            if (reader.Read())
+                            {
+                                loggedinUserId = (int)reader["Id"];
+                                Session["User_Id"] = loggedinUserId.ToString();
+                                Session["UserName"] = reader["UserName"].ToString();
+                                //Session["User_Id"] = Convert.ToInt32(reader["Id"]);
+                                Response.Redirect("MyDelivery.aspx");
+                            }
                         }
-                        /*
-                        else
-                        {
-                            MessageBox.Show("Invalid Username: check information or sign up");
-                        }
-                        */
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Invalid Username: Please re-check information or Sign Up.");
+                   MessageBox.Show("Invalid Username: Please re-check information or Sign Up.");
                 }
+            
             }
             
         }
 
-    }
+    } */
 }
     

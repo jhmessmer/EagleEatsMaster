@@ -22,8 +22,38 @@ namespace EagleEatsMaster
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader reader;
+
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+                return;
+            var parameters = this.SqlDataSource1.InsertParameters;
+            parameters["UserName"].DefaultValue = tbUser.Text;
+            parameters["Password"].DefaultValue = tbPassword.Text; 
+            parameters["Address"].DefaultValue = tbAddress.Text;
+
+            try
+            {
+                this.SqlDataSource1.Insert();
+
+                Response.Redirect("Home.aspx");
+
+            }
+            catch (Exception)
+            {
+                
+            }
+
+           // SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=EagleEatsDB;Integrated Security=True");
+           // {
+           //     con.Open();
+           //     SqlCommand cmd = new SqlCommand("INSERT into User values(@UserName, @Passwd, @Address)", con);
+           //     cmd.Parameters.AddWithValue("UserName", tbUser.Text);
+           //     cmd.Parameters.AddWithValue("Passwd", tbPassword.Text);
+           //     cmd.Parameters.AddWithValue("Address", tbAddress.Text);
+           //     cmd.ExecuteNonQuery();
+           // }
+            /*
             string Username = tbUser.Text;
             string Password = tbPassword.Text;
             string Confirm = tbConfirm.Text;
@@ -58,7 +88,7 @@ namespace EagleEatsMaster
                     MessageBox.Show("Error");
                 }
             }
-            */
+            
 
             
             using (var con = new SqlConnection(constring))
@@ -99,6 +129,7 @@ namespace EagleEatsMaster
                 }
             
            }
+            */
            
         }
         }
