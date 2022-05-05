@@ -3,17 +3,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Customer Sign Up</h1>
-    <h2>Please enter the following information to register for EagleEats deliveries!</h2>
+     <h2>Please enter the following information to register for EagleEats deliveries!</h2>
+    <p>
     <br />
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname"><br>
-    <label for="passwd">Password:</label><br>
-    <input type="text" id="passwd" name="address"><br>
-    <label for="address">Address:</label><br>
-    <input type="text" id="address" name="address"><br>
+    <asp:Label ID="lblUsername" runat="server" Text="Username:"></asp:Label>
+    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
     <br />
+    <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+    <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
     <br />
-    <input type="submit" value="Submit">
+    <asp:Label ID="lblAddress" runat="server" Text="Address:"></asp:Label>
+    <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
+    <br />
+    <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" OnClick="btnSignUp_Click" />
+    </p>
+    
 </asp:Content>

@@ -13,5 +13,10 @@ namespace EagleEatsMaster
         {
 
         }
+
+        protected void btnSignUp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
