@@ -50,13 +50,13 @@ namespace EagleEatsMaster
             int UserId;
 
             string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
-            string query = "SELECT [Id], [Username], [Password] FROM [User] WHERE (([Username] = @Username) AND ([Password] = @Password))";
+            string query = "SELECT [Id], [UserName], [Passwd] FROM [User] WHERE (([UserName] = @UserName) AND ([Passwd] = @Passwd))";
             
             using (var con = new SqlConnection(constring))
             {
                 var command = new SqlCommand(query, con);
-                command.Parameters.AddWithValue("@Username", Username);
-                command.Parameters.AddWithValue("@Password", Password);
+                command.Parameters.AddWithValue("@UserName", Username);
+                command.Parameters.AddWithValue("@Passwd", Password);
 
                 try
                 {
@@ -65,8 +65,8 @@ namespace EagleEatsMaster
                     {
                         if (reader.Read())
                         {
-                            Session["UserId"] = Convert.ToInt32(reader["Id"]);
-                            Session["Password"] = Password;
+                            Session["User_Id"] = Convert.ToInt32(reader["Id"]);
+                            Session["Passwd"] = Password;
                             Response.Redirect("MyDelivery.aspx");
                         }
                         /*

@@ -16,8 +16,7 @@ namespace EagleEatsMaster
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           //cn = new SqlConnection(@ **)
-           //cn.Open();
+
         }
 
         SqlConnection con;
@@ -31,14 +30,14 @@ namespace EagleEatsMaster
             string Address = tbAddress.Text;
 
             string constring = ConfigurationManager.ConnectionStrings["EagleEatsDBConnectionString"].ConnectionString;
-            string query = "INSERT into [User] values(@Username,@Password,@Address)";
+            string query = "INSERT into [User] values(@UserName,@Passwd,@Address)";
 
             /*
             using (var con = new SqlConnection(constring));
             {
                 var command = new SqlCommand(query, con);
-                command.Parameters.AddWithValue("@Username", Username);
-                command.Parameters.AddWithValue("@Password", Password);
+                command.Parameters.AddWithValue("@UserName", Username);
+                command.Parameters.AddWithValue("@Passwd", Password);
                 command.Parameters.AddWithValue("@Address", Address);
 
                 try
@@ -48,8 +47,8 @@ namespace EagleEatsMaster
                     {
                         if(reader.Read())
                         {
-                            Session["UserId"] = Convert.ToInt32(reader["Id"]);
-                            Session["Password"] = Password;
+                            Session["User_Id"] = Convert.ToInt32(reader["Id"]);
+                            Session["Passwd"] = Password;
                             Response.Redirect("Home.aspx");
                         }
                     }
@@ -70,7 +69,7 @@ namespace EagleEatsMaster
                 {
                     if (Password == Confirm)
                     {
-                        cmd = new SqlCommand("SELECT * from [User] WHERE Username='" + Username + "'", con);
+                        cmd = new SqlCommand("SELECT * from [User] WHERE UserName='" + Username + "'", con);
                         var reader = command.ExecuteReader();
                         if (reader.Read())
                         {
@@ -80,9 +79,9 @@ namespace EagleEatsMaster
                         else
                         {
                             con.Close();
-                            //cmd = new SqlCommand("INSERT into [User] values(@Username,@Password,@Address)", con);
-                            command.Parameters.AddWithValue("@Username", Username);
-                            command.Parameters.AddWithValue("@Password", Password);
+                            cmd = new SqlCommand("INSERT into [User] values(@UserName,@Passwd,@Address)", con);
+                            command.Parameters.AddWithValue("@UserName", Username);
+                            command.Parameters.AddWithValue("@Passwd", Password);
                             command.Parameters.AddWithValue("@Address", Address);
                             command.ExecuteNonQuery();
                             MessageBox.Show("Account successfully created. Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -98,7 +97,9 @@ namespace EagleEatsMaster
                 {
                     MessageBox.Show("Please fill all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            
            }
+           
         }
         }
 }
