@@ -23,8 +23,7 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EagleEatsDBConnectionString %>" SelectCommand="SELECT * FROM [Delivery]"></asp:SqlDataSource>
     </p>
         <p>
-            <asp:Button ID="btnComplete" runat="server" Text="Complete Delivery" />
-        </p>
+            &nbsp;</p>
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="Delivery_Id" DataSourceID="SqlDataSource2" OnItemCreated="FormView1_ItemCreated" OnItemDeleted="FormView1_ItemDeleted" OnItemInserted="FormView1_ItemInserted">
         <EditItemTemplate>
             Delivery_Id:
@@ -158,12 +157,6 @@
             <asp:Parameter Name="Delivery_Id" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <h2>Review Deliveries</h2>
-<p>
-    <asp:TextBox ID="txtReviewDelivery" runat="server" Height="128px" Width="342px"></asp:TextBox>
-     <b></b>
-</p>
     <p>
-        <asp:Button ID="btnReview" runat="server" Text="Submit Review" />
-    </p>
+        &nbsp;</p>
 </asp:Content>

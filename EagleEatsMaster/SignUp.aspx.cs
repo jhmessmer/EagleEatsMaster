@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace EagleEatsMaster
 {
@@ -29,17 +30,18 @@ namespace EagleEatsMaster
                 Session["User_Id"] = Convert.ToInt32(reader["User_Id"].ToString());
                 Session["UserName"] = reader["UserName"].ToString();
                 Session["Address"] = reader["Address"].ToString();
+                Response.Redirect("Home.aspx");
                 reader.Close();
                 cmd.Dispose();
                 con.Close();
-                Response.Redirect("Home.aspx");
+                
             }
             else
             {
                 reader.Close();
                 cmd.Dispose();
                 con.Close();
-                
+                Response.Redirect("Home.aspx");
             }
         }
     }
